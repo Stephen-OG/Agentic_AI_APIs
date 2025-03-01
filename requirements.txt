@@ -19,8 +19,8 @@ httpx==0.28.1
 idna==3.10 
 jsonpatch==1.33 
 jsonpointer==3.0.0 
-langchain==0.3.19 l
-angchain-core==0.3.40 
+langchain==0.3.19
+langchain-core==0.3.40 
 langchain-groq==0.2.4 
 langchain-text-splitters==0.3.6 
 langsmith==0.3.11 
