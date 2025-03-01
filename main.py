@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from bson import ObjectId
 from fastapi.middleware.cors import CORSMiddleware
 from api.controllers.user import router as user_router
 from api.controllers.agent import router as ai_agent
