@@ -20,7 +20,7 @@ async def login(user: UserLogin):
 @router.post("/users/")
 async def create_user(user: User):
     new_user = await collection["users"].insert_one(user.model_dump())
-    created_user = await collection.find_one({"_id": new_user.inserted_id})
+    created_user = await collection["users"].find_one({"_id": new_user.inserted_id})
     return user_serializer(created_user)
 
 # Read All Users
