@@ -89,3 +89,7 @@ wsproto==1.2.0
 xmlrpclib==1.0.1
 yapf==0.40.2
 zstandard==0.23.0
+fastapi
+uvicorn
+pymongo
+python-dotenv
