@@ -3,9 +3,8 @@ from langchain.prompts import PromptTemplate
 from langchain_groq import ChatGroq
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
-from pydantic import BaseModel
 from bson import ObjectId
-from ..utils import conversation_serializer,character_serializer, user_serializer
+from ..utils import user_serializer
 from ..config.config import collection
 from ..models.user import User
 from dotenv import load_dotenv
