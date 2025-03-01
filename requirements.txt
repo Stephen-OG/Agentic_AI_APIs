@@ -4,3 +4,4 @@ langchain-groq==0.2.4
 langsmith==0.3.11
 groq==0.18.0
 dotenv==0.9.9
+uvicorn
