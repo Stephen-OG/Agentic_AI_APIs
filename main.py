@@ -1,15 +1,7 @@
 from fastapi import FastAPI, HTTPException
-from motor.motor_asyncio import AsyncIOMotorClient
-from bson import ObjectId
 from fastapi.middleware.cors import CORSMiddleware
 from api.controllers.user import router as user_router
 from api.controllers.agent import router as ai_agent
-
-from pydantic import BaseModel
-
-# Define a simple model for the user input
-class InputData(BaseModel):
-    user_input: str
 
 # FastAPI App
 app = FastAPI()

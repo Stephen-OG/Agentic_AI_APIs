@@ -95,7 +95,7 @@ async def get_ai(user_id: str, message: str, character_id: str):
     return {"response": response}
 
 @router.get("/conversation")
-async def get_conversation(
+async def get_conversations(
     user_id: str,
     character_id: str,
     skip: int = Query(0, description="Number of messages to skip"),
