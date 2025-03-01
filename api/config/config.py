@@ -8,7 +8,12 @@ load_dotenv()
 MONGO_URL = os.getenv("MONGO_URL")
 client = AsyncIOMotorClient(MONGO_URL)
 db = client.fastapi_db  # Database
-collection = db.users  # Collection
+collection = {
+    "users": db.users,
+    "conversations":db.conversations,
+    "characters": db.characters,
+    "memory": db.memories
+    }  # Collections
 
 # Send a ping to confirm a successful connection
 try:

@@ -3,6 +3,8 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from bson import ObjectId
 from fastapi.middleware.cors import CORSMiddleware
 from api.controllers.user import router as user_router
+from api.controllers.agent import router as ai_agent
+
 from pydantic import BaseModel
 
 # Define a simple model for the user input
@@ -15,7 +17,8 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins, or specify ['http://localhost:3000']
+    # allow_origins=["*"],  # Allow all origins, or specify ['http://localhost:3000']
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,11 +28,5 @@ app.add_middleware(
 async def home():
     return {"message": "User Home"}
 
-@app.post("/get_ai_response/")
-async def get_ai_response(data: InputData):
-    # Here you can integrate your Agentic AI logic
-    # This is just an example response
-    ai_response = f"AI Response to '{data.user_input}'"
-    return {"response": ai_response}
-
 app.include_router(user_router)
+app.include_router(ai_agent)
